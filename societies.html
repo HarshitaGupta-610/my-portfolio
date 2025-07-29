@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Societies - DecodedHarshita</title>
+  <link rel="icon" type="image/png" href="assets\logo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+    <span id="theme-icon">🌙</span>
+  </div>
+
+  <header>
+    <div class="logo">DecodedHarshita</div>
+    <nav>
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="achievements.html" class="nav-btn">Achievements</a>
+      <a href="projects.html" class="nav-btn">Projects</a>
+        <a href="skills.html" class="nav-btn">Skills</a>
+      <a href="contact.html" class="nav-btn">Contact Me</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="badge">🤝 Societies</div>
+    <h1>Societal Involvement</h1>
+    <p>Contributing and learning with like-minded peers through societies and student events.</p>
+  </section>
+
+  <section class="cards-section">
+
+    <!-- B-Plan Competition -->
+   <div class="horizontal-card">
+  <a href="assets/HarshitaGupta B-Plan.pdf" target="_blank" class="img-box">
+    <img src="assets/B-Plan.png" alt="B-Plan Certificate">
+  </a>
+  <div class="content">
+    <a href="assets/HarshitaGupta B-Plan.pdf" target="_blank">
+      <div class="card-title">B-Plan Competition – E-Summit DTU</div>
+    </a>
+    <p class="card-desc">
+      Attended the B-Plan event organized by DTU’s E-Cell during E-Summit.  
+      Got to explore a range of startup pitches and gained an introductory understanding of finance, innovation, and entrepreneurship.
+    </p>
+  </div>
+</div>
+
+
+    <!-- CodeBenders C++ -->
+    <div class="horizontal-card">
+      <a href="assets/CodeBendersC++_page-0001.jpg" target="_blank" class="img-box">
+        <img src="assets/CodeBendersC++_page-0001.jpg" alt="CodeBenders C++ Certificate">
+      </a>
+      <div class="content">
+        <a href="assets/CodeBendersC++_page-0001.jpg" target="_blank">
+          <div class="card-title">C++ Bootcamp – CodeBenders</div>
+        </a>
+        <p class="card-desc">
+          Attended a beginner-friendly C++ Bootcamp hosted by our college society <strong>CodeBenders</strong>.  
+          A hands-on way to explore programming fundamentals in an encouraging environment.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+ <script>
+  // Load saved theme on page load
+  window.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+      document.body.classList.add("light-theme");
+      document.getElementById("theme-icon").textContent = "☀️";
+    }
+  });
+
+  function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById("theme-icon");
+    const isLight = body.classList.toggle("light-theme");
+
+    icon.textContent = isLight ? "☀️" : "🌙";
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+  }
+
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+
+
+</body>
+</html>

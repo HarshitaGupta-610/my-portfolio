@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Harshita Gupta</title>
+  <link rel="icon" type="image/png" href="assets/logo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #responseMessage {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🌙 Theme Toggle Button -->
+  <div class="theme-toggle" onclick="toggleTheme()" id="theme-icon">🌙</div>
+
+  <!-- ===== Header Section ===== -->
+  <header>
+    <div class="logo">Harshita Gupta</div>
+    <nav>
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="projects.html" class="nav-btn">Projects</a>
+      <a href="skills.html" class="nav-btn">Skills</a>
+      <a href="contact.html" class="nav-btn">Contact Me</a>
+    </nav>
+  </header>
+
+  <!-- ===== Contact Section ===== -->
+  <section class="cards-section">
+    <h1 class="hero">Let's Connect</h1>
+
+    <!-- ===== Contact Form Card ===== -->
+    <div class="horizontal-card" style="flex-direction: column; align-items: center; max-width: 500px; margin: auto;">
+      <form name="contact" method="POST" data-netlify="true" style="width: 100%;">
+        <input type="hidden" name="form-name" value="contact" />
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+          class="input-field"
+          style="width: 100%; margin-bottom: 15px;"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          class="input-field"
+          style="width: 100%; margin-bottom: 15px;"
+        />
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          rows="5"
+          required
+          class="input-field"
+          style="width: 100%; margin-bottom: 15px; resize: vertical;"
+        ></textarea>
+        <button type="submit" class="button" style="width: 100%;">Send Message</button>
+      </form>
+
+      <p id="responseMessage"></p>
+    </div>
+
+    <!-- ===== Social Links Card ===== -->
+    <div class="horizontal-card" style="flex-direction: column; align-items: center; margin-top: 40px;">
+      <h3>Connect with me:</h3>
+      <p><a href="https://www.linkedin.com/in/harshita-gupta-93a886326/" target="_blank" class="view-link">LinkedIn</a></p>
+      <p><a href="https://www.instagram.com/harshitagupta.10/" target="_blank" class="view-link">Instagram</a></p>
+      <p><a href="mailto:harshitagupta.ambala@gmail.com" class="view-link" target="_blank">My Mail - harshitagupta.ambala@gmail.com</a></p>
+    </div>
+  </section>
+
+  <!-- ===== Theme Script ===== -->
+  <script>
+    const icon = document.getElementById("theme-icon");
+
+    function toggleTheme() {
+      document.body.classList.toggle("light-theme");
+      const isLight = document.body.classList.contains("light-theme");
+      icon.textContent = isLight ? "☀️" : "🌙";
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+    }
+
+    window.onload = () => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+        icon.textContent = "☀️";
+      } else {
+        icon.textContent = "🌙";
+      }
+    };
+  </script>
+
+ 
+
+</body>
+</html>

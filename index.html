@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DecodedHarshita</title>
+  <link rel="icon" type="image/png" href="assets\logo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 🌗 Theme Toggle -->
+  <div class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+    <span id="theme-icon">🌙</span>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">DecodedHarshita</div>
+    <nav>
+  <a href="#home" class="nav-btn">Home</a>
+  <a href="achievements.html" class="nav-btn">Achievements</a>  <!-- ✅ Change here -->
+  <a href="projects.html" class="nav-btn">Projects</a>
+  <a href="skills.html" class="nav-btn">Skills</a>
+  <a href="contact.html" class="nav-btn">Contact Me</a>
+</nav>
+
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="badge">🌱 Aspiring Enthusiast in Computer Science</div>
+    <h1>Hello, I'm Harshita Gupta</h1>
+    <p>
+      I'm an undergraduate at <strong>IGDTUW</strong>, passionate about tech, AI, and building impactful digital products. This is a glimpse of my journey.
+    </p>
+    <button class="button" onclick="scrollToSection('proofs')">Journey So Far</button>
+  </section>
+
+  <!-- Proof Cards -->
+  <section class="cards-section" id="proofs">
+    <div class="card-container">
+      <!-- Resume -->
+      <a href="assets/HarshitaGuptaResume.pdf" target="_blank" class="card">
+        <div class="img-box">
+          <img src="assets/HarshitaGuptaResume _page-0001.jpg" alt="Resume Preview">
+        </div>
+        <div class="card-title">📄 Resume</div>
+      </a>
+
+      <!-- Flipkart -->
+      <a href="assets/FlipKart.png" target="_blank" class="card">
+        <div class="img-box">
+          <img src="assets/FlipKart.png" alt="Flipkart Shortlisting">
+        </div>
+        <div class="card-title">🛍️ Flipkart Shortlisted</div>
+      </a>
+
+      <!-- Hackathon -->
+      <a href="assets/Sankalp.jpg" target="_blank" class="card">
+        <div class="img-box">
+          <img src="assets/Sankalp.jpg" alt="Hackathon Achievement">
+        </div>
+        <div class="card-title">🏆 Hackathon Highlight</div>
+      </a>
+    </div>
+  </section>
+
+  <script>
+  // Load saved theme on page load
+  window.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+      document.body.classList.add("light-theme");
+      document.getElementById("theme-icon").textContent = "☀️";
+    }
+  });
+
+  function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById("theme-icon");
+    const isLight = body.classList.toggle("light-theme");
+
+    icon.textContent = isLight ? "☀️" : "🌙";
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+  }
+
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+
+</body>
+</html>
+

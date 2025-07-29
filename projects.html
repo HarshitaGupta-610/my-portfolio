@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects - DecodedHarshita</title>
+  <link rel="icon" type="image/png" href="assets\logo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+    <span id="theme-icon">🌙</span>
+  </div>
+
+  <header>
+    <div class="logo">DecodedHarshita</div>
+    <nav>
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="achievements.html" class="nav-btn">Achievements</a>
+      <a href="projects.html" class="nav-btn">Projects</a>
+      <a href="skills.html" class="nav-btn">Skills</a>
+      <a href="contact.html" class="nav-btn">Contact Me</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="badge">💡 Projects</div>
+    <h1>My Projects</h1>
+    <p>Here’s a selection of personal and practice projects that helped shape my tech journey.</p>
+  </section>
+
+  <section class="cards-section">
+
+    <!-- YouTube Clone -->
+    <div class="horizontal-card">
+      <a href="https://h-tube-clone.netlify.app" target="_blank" class="img-box">
+        <img src="assets/youtubeclone.png" alt="YouTube Clone Project">
+      </a>
+      <div class="content">
+        <a href="https://h-tube-clone.netlify.app" target="_blank">
+          <div class="card-title">YouTube Clone - HTube</div>
+        </a>
+        <p class="card-desc">
+          A front-end practice project replicating YouTube UI and functionality using HTML, CSS, and JavaScript.  
+          Built to practice DOM manipulation, layout structuring, and responsive design.
+        </p>
+        <a href="https://h-tube-clone.netlify.app" target="_blank" class="view-link">Live Demo</a>
+      </div>
+    </div>
+
+    <!-- Task Manager -->
+    <div class="horizontal-card">
+      <a href="https://harshitagupta-610.github.io/To-Do-List/" target="_blank" class="img-box">
+        <img src="assets/todo.png" alt="To-Do List">
+      </a>
+      <div class="content">
+        <a href="https://harshitagupta-610.github.io/To-Do-List/" target="_blank">
+          <div class="card-title">Task Manager Website</div>
+        </a>
+        <p class="card-desc">
+          A simple and clean to-do list project that lets users manage daily tasks using local storage.  
+          Built using HTML, CSS, and vanilla JavaScript.
+        </p>
+        <a href="https://harshitagupta-610.github.io/To-Do-List/" target="_blank" class="view-link">Live Demo</a>
+      </div>
+    </div>
+
+    <!-- Shadow Painter -->
+    <div class="horizontal-card">
+      <div class="img-box">
+        <img src="assets/shadowpainter.png" alt="Shadow Painter Project">
+      </div>
+      <div class="content">
+        <div class="card-title">Shadow Painter</div>
+        <p class="card-desc">
+          An interactive browser-based project that simulates dynamic shadows.  
+          Lets users drag a virtual light source and observe real-time changes in object shadows.
+        </p>
+        <a href="https://harshitagupta-610.github.io/Shadow-Painter/" target="_blank" class="view-link">Live Demo</a>
+      </div>
+      </div>
+    </div>
+
+    <!-- GreenSwap -->
+    <div class="horizontal-card">
+      <a href="https://harshitagupta-610.github.io/GreenSwap/" target="_blank" class="img-box">
+        <img src="assets/greenswap.png" alt="GreenSwap Project">
+      </a>
+      <div class="content">
+        <a href="https://harshitagupta-610.github.io/GreenSwap/" target="_blank">
+          <div class="card-title">GreenSwap – Sustainable Shopping Assistant</div>
+        </a>
+        <p class="card-desc">
+          A work-in-progress full-stack web app that suggests eco-friendly alternatives to daily-use items.  
+          Promotes sustainable choices while offering a user-friendly browsing experience.
+        </p>
+        <a href="https://harshitagupta-610.github.io/GreenSwap/" target="_blank" class="view-link">Preview</a>
+      </div>
+    </div>
+
+  </section>
+<script>
+  // Load saved theme on page load
+  window.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+      document.body.classList.add("light-theme");
+      document.getElementById("theme-icon").textContent = "☀️";
+    }
+  });
+
+  function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById("theme-icon");
+    const isLight = body.classList.toggle("light-theme");
+
+    icon.textContent = isLight ? "☀️" : "🌙";
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+  }
+
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+
+
+
+</body>
+</html>

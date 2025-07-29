@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hackathons - DecodedHarshita</title>
+  <link rel="icon" type="image/png" href="assets\logo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+    <span id="theme-icon">🌙</span>
+  </div>
+
+  <header>
+    <div class="logo">DecodedHarshita</div>
+    <nav>
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="achievements.html" class="nav-btn">Achievements</a>
+      <a href="projects.html" class="nav-btn">Projects</a>
+      <a href="skills.html" class="nav-btn">Skills</a>
+      <a href="contact.html" class="nav-btn">Contact Me</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="badge">🚀 Hackathons</div>
+    <h1>My Hackathon Journey</h1>
+    <p>Some challenges, some wins — but always learning something new.</p>
+  </section>
+
+  <section class="cards-section">
+    <!-- IEEE Hackathon -->
+    <div class="horizontal-card">
+      <a href="assets/IEEE_Hackathon.pdf" target="_blank" class="img-box">
+        <img src="assets/IEEHacks.png" alt="IEEE Certificate" />
+      </a>
+      <div class="content">
+        <a href="assets/IEEE_Hackathon.pdf" target="_blank">
+          <div class="card-title">IEEE Hackathon</div>
+        </a>
+        <p class="card-desc">
+          Our idea, <strong>SheLearns</strong>, aimed to bridge the digital gap for rural women by providing offline-friendly tech education.
+          While it was one of our first hackathons and we didn’t go too far, it helped us gain valuable exposure and confidence.
+        </p>
+        <a class="view-link" href="https://devfolio.co/projects/shelearns-d429" target="_blank">🔗 View Project on Devfolio</a>
+      </div>
+    </div>
+
+    <!-- LeanIn Hacks -->
+    <div class="horizontal-card">
+      <a href="assets/LeanInHacks.png" target="_blank" class="img-box">
+        <img src="assets/LeanInHacks.png" alt="LeanIn Certificate" />
+      </a>
+      <div class="content">
+        <a href="assets/LeanInHacks.png" target="_blank">
+          <div class="card-title">LeanIn Hacks</div>
+        </a>
+        <p class="card-desc">
+          Our idea <strong>FeelWell</strong> aims to support people facing anxiety or mood swings through mood-based music, AI chats, and stress-relief features.
+          Though we didn’t reach the final round, we gained hands-on experience in <strong>Figma and UX thinking</strong>.
+        </p>
+        <a class="view-link" href="https://devfolio.co/projects/feelwell-c1d0" target="_blank">🔗 View Project on Devfolio</a>
+      </div>
+    </div>
+
+    <!-- HackJMI -->
+    <div class="horizontal-card">
+      <a href="assets/HackJMI.png" target="_blank" class="img-box">
+        <img src="assets/HackJMI.png" alt="HackJMI Certificate" />
+      </a>
+      <div class="content">
+        <a href="assets/HackJMI.png" target="_blank">
+          <div class="card-title">HackJMI</div>
+        </a>
+        <p class="card-desc">
+          We proposed an app to simplify Delhi Metro travel — showing live crowd data and enabling seat booking in advance.
+          It was a great learning experience in <strong>real-world problem-solving</strong> and teamwork.
+        </p>
+      </div>
+    </div>
+
+    <!-- Google Girl Hackathon -->
+    <div class="horizontal-card">
+      <a href="assets/GoogleGirl.png" target="_blank" class="img-box">
+        <img src="assets/GoogleGirl.png" alt="Google Girl Hackathon Certificate" />
+      </a>
+      <div class="content">
+        <a href="assets/GoogleGirl.png" target="_blank">
+          <div class="card-title">Google Girl Hackathon</div>
+        </a>
+        <p class="card-desc">
+          As part of the <strong>Google Girl Hackathon</strong>, I learnt how to build impactful resumes and participated in virtual cohorts.
+          It was also my first experience giving an online coding test on a global platform — a great confidence booster!
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+ <script>
+  // Load saved theme on page load
+  window.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+      document.body.classList.add("light-theme");
+      document.getElementById("theme-icon").textContent = "☀️";
+    }
+  });
+
+  function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById("theme-icon");
+    const isLight = body.classList.toggle("light-theme");
+
+    icon.textContent = isLight ? "☀️" : "🌙";
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+  }
+
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+
+
+
+</body>
+</html>
+

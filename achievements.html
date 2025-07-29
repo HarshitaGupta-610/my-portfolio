@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Achievements - DecodedHarshita</title>
+  <link rel="icon" type="image/png" href="assets\logo.jpg" />
+
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .preview-card {
+      width: 250px;
+      height: 260px;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: #1c1c2b;
+      box-shadow: 0 0 15px rgba(0, 255, 115, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: white;
+    }
+
+    .preview-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 255, 115, 0.5);
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 2px;
+      height: 80%;
+    }
+
+    .preview-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .preview-title {
+      background-color: #00ff73;
+      color: black;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .preview-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      padding: 50px;
+    }
+
+    .pdf-fallback {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #333;
+      font-size: 18px;
+      font-weight: bold;
+      color: #00ff73;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🌗 Theme Toggle -->
+  <div class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+    <span id="theme-icon">🌙</span>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">DecodedHarshita</div>
+    <nav>
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="achievements.html" class="nav-btn">Achievements</a>
+      <a href="projects.html" class="nav-btn">Projects</a>
+      <a href="skills.html" class="nav-btn">Skills</a>
+      <a href="contact.html" class="nav-btn">Contact Me</a>
+    </nav>
+  </header>
+
+  <!-- Achievements Hero -->
+ <section class="hero">
+  <div class="badge">🌿 Learning, Growing, Exploring</div>
+  <h1>Some Steps in My Ongoing Journey</h1>
+  <p>These are a few milestones that reflect the learning and experiences I've gathered so far — still learning, still building.</p>
+</section>
+
+
+  <!-- Category Preview Cards -->
+  <section class="preview-section">
+
+    <!-- Hackathons -->
+    <a href="hackathons.html" class="preview-card">
+      <div class="preview-grid">
+        <img src="assets/LeanInHacks.png" alt="LeanInHacks" />
+        <img src="assets/HackJMI.png" alt="HackJMI" />
+        <img src="assets/GoogleGirl.png" alt="Google Girl" />
+        <img src="assets\IEEHacks.png" alt="IEE" />
+      </div>
+      <div class="preview-title">🚀 Hackathons</div>
+    </a>
+
+    <!-- Internships -->
+    <a href="internships.html" class="preview-card">
+      <div class="preview-grid">
+        <img src="assets/FlipKart.png" alt="Flipkart Internship" />
+        
+      </div>
+      <div class="preview-title">💼 Internships</div>
+    </a>
+
+    <!-- Coding Competitions -->
+    <a href="coding.html" class="preview-card">
+      <div class="preview-grid">
+        <img src="assets/DSAQuiz2.png" alt="DSA Quiz 2" />
+        <img src="assets/DSAQuiz.png" alt="DSA Quiz 1" />
+        <img src="assets/CodeRush.png" alt="CodeRush" />
+        <img src="assets/CodeClash.png" alt="CodeClash" />
+      </div>
+      <div class="preview-title">👩‍💻 Coding</div>
+    </a>
+
+    <!-- Societies -->
+    <a href="societies.html" class="preview-card">
+      <div class="preview-grid">
+        <img src="assets/B-Plan.png" alt="B-Plan Certificate" />
+        <img src="assets\CodeBendersC++_page-0001.jpg" alt="CodeBenders" />
+        
+      </div>
+      <div class="preview-title">🏛 Societies</div>
+    </a>
+
+  </section>
+
+ <script>
+  // Load saved theme on page load
+  window.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+      document.body.classList.add("light-theme");
+      document.getElementById("theme-icon").textContent = "☀️";
+    }
+  });
+
+  function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById("theme-icon");
+    const isLight = body.classList.toggle("light-theme");
+
+    icon.textContent = isLight ? "☀️" : "🌙";
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+  }
+
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+
+
+
+</body>
+</html>
+
+

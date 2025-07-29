@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coding Certifications - DecodedHarshita</title>
+  <link rel="icon" type="image/png" href="assets\logo.jpg" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+    <span id="theme-icon">🌙</span>
+  </div>
+
+  <header>
+    <div class="logo">DecodedHarshita</div>
+    <nav>
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="achievements.html" class="nav-btn">Achievements</a>
+      <a href="projects.html" class="nav-btn">Projects</a>
+      <a href="skills.html" class="nav-btn">Skills</a>
+      <a href="contact.html" class="nav-btn">Contact Me</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="badge">💻 Coding</div>
+    <h1>Coding Certifications</h1>
+    <p>Each certificate here reflects small wins and valuable lessons on my coding journey.</p>
+  </section>
+
+  <section class="cards-section">
+    
+    <!-- CodeClash -->
+    <div class="horizontal-card">
+      <a href="assets/CodeClash Certificate.pdf" target="_blank" class="img-box">
+        <img src="assets/CodeClash.png" alt="CodeClash Certificate">
+      </a>
+      <div class="content">
+        <a href="assets/CodeClash Certificate.pdf" target="_blank">
+          <div class="card-title">CodeClash Assessment</div>
+        </a>
+        <p class="card-desc">
+          A DSA-based MCQ assessment round covering time and space complexity, core data structures, and algorithmic logic.  
+          The experience sharpened my theoretical understanding of programming concepts.
+        </p>
+      </div>
+    </div>
+
+    <!-- CodeRush -->
+    <div class="horizontal-card">
+      <a href="assets/CodeRush Certificate.pdf" target="_blank" class="img-box">
+        <img src="assets/CodeRush.png" alt="CodeRush Certificate">
+      </a>
+      <div class="content">
+        <a href="assets/CodeRush Certificate.pdf" target="_blank">
+          <div class="card-title">CodeRush Coding Challenge</div>
+        </a>
+        <p class="card-desc">
+          A 6-question coding contest with 2 hard, 2 medium, and 2 easy-level problems.  
+          Strengthened my debugging skills and strategic time management in real coding rounds.
+        </p>
+      </div>
+    </div>
+
+    <!-- DSA Quiz 1 -->
+    <div class="horizontal-card">
+      <a href="assets/DSA Quiz.pdf" target="_blank" class="img-box">
+        <img src="assets/DSAQuiz.png" alt="DSA Quiz Certificate">
+      </a>
+      <div class="content">
+        <a href="assets/DSA Quiz.pdf" target="_blank">
+          <div class="card-title">DSA Quiz - CodeArena</div>
+        </a>
+        <p class="card-desc">
+          A competitive quiz round organized as part of CodeArena to evaluate DSA concepts like arrays, stacks, and queues.  
+          A quick-thinking round that built conceptual clarity under pressure.
+        </p>
+      </div>
+    </div>
+
+    <!-- DSA Quiz 2 -->
+    <div class="horizontal-card">
+      <a href="assets/DSAQuiz2.pdf" target="_blank" class="img-box">
+        <img src="assets/DSAQuiz2.png" alt="DSA Quiz 2 Certificate">
+      </a>
+      <div class="content">
+        <a href="assets/DSAQuiz2.pdf" target="_blank">
+          <div class="card-title">DSA Quiz and Competition</div>
+        </a>
+        <p class="card-desc">
+          Another edition of the CodeArena DSA competition testing similar core topics with refreshed question sets.  
+          Helped reinforce previously learned techniques and compete among peers.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+  // Load saved theme on page load
+  window.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+      document.body.classList.add("light-theme");
+      document.getElementById("theme-icon").textContent = "☀️";
+    }
+  });
+
+  function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById("theme-icon");
+    const isLight = body.classList.toggle("light-theme");
+
+    icon.textContent = isLight ? "☀️" : "🌙";
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+  }
+
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills - DecodedHarshita</title>
+  <link rel="icon" type="image/png" href="assets\logo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 🌗 Theme Toggle -->
+  <div class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+    <span id="theme-icon">🌙</span>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">DecodedHarshita</div>
+    <nav>
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="achievements.html" class="nav-btn">Achievements</a>
+      <a href="projects.html" class="nav-btn">Projects</a>
+      <a href="skills.html" class="nav-btn">Skills</a>
+      <a href="contact.html" class="nav-btn">Contact Me</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="badge">💡 Lifelong Learner</div>
+    <h1>Technical & Soft Skills</h1>
+    <p>A collection of the technologies I work with and the soft skills I’ve built along the way.</p>
+  </section>
+
+  <!-- Skills Cards -->
+  <div class="card-container">
+
+    <!-- Programming Languages -->
+    <div class="horizontal-card">
+      <div class="img-box">
+        <img src="assets/languages-icon.png" alt="Languages Icon" />
+      </div>
+      <div class="content">
+        <div class="card-title">Languages</div>
+        <p class="card-desc">Python, C, C++, JavaScript, HTML, CSS, R</p>
+      </div>
+    </div>
+
+    <!-- Libraries & Tools -->
+    <div class="horizontal-card">
+      <div class="img-box">
+        <img src="assets\tools-icon.webp" alt="Libraries and Tools" />
+      </div>
+      <div class="content">
+        <div class="card-title">Libraries & Tools</div>
+        <p class="card-desc">NumPy, Pandas, Firebase, Git, VS Code, Google Colab</p>
+      </div>
+    </div>
+
+    <!-- Soft Skills -->
+    <div class="horizontal-card">
+      <div class="img-box">
+        <img src="assets\SoftSkills.jpeg" alt="Soft Skills" />
+      </div>
+      <div class="content">
+        <div class="card-title">Soft Skills</div>
+        <p class="card-desc">Communication, Time Management, Leadership, Teamwork</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Theme Script -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+        document.getElementById("theme-icon").textContent = "☀️";
+      }
+    });
+
+    function toggleTheme() {
+      const body = document.body;
+      const icon = document.getElementById("theme-icon");
+      const isLight = body.classList.toggle("light-theme");
+
+      icon.textContent = isLight ? "☀️" : "🌙";
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+    }
+  </script>
+</body>
+</html>

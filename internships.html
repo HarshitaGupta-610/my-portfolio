@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Experience as an Intern - DecodedHarshita</title>
+  <link rel="icon" type="image/png" href="assets/logo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+    <span id="theme-icon">🌙</span>
+  </div>
+  <header>
+    <div class="logo">DecodedHarshita</div>
+    <nav>
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="achievements.html" class="nav-btn">Achievements</a>
+      <a href="projects.html" class="nav-btn">Projects</a>
+      <a href="skills.html" class="nav-btn">Skills</a>
+      <a href="contact.html" class="nav-btn">Contact Me</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="badge">💼 Experience</div>
+    <h1>Experience as an Intern</h1>
+  </section>
+  <section class="cards-section">
+    <!-- Falconet Internship -->
+    <div class="horizontal-card">
+      <a href="assets/Falconet.pdf" target="_blank" class="img-box">
+        <embed src="assets/Falconet.pdf#page=1" type="application/pdf" width="100%" height="100%" />
+      </a>
+      <div class="content">
+        <div class="card-title">Full Stack Web Development Intern, Falconet Internet Pvt. Ltd.</div>
+        <div style="font-size: 14px; color: #aaa; margin-bottom: 8px;">November 2025 – January 2026</div>
+        <ul class="card-desc" style="text-align: left;">
+          <li>Built a <b>Project Tracker Dashboard</b> using <b>MongoDB, Express.js, React.js, Node.js (MERN)</b> with full CRUD operations and real-time project monitoring.</li>
+          <li>Designed and integrated <b>RESTful APIs</b> and developed data visualization features to track project progress and performance metrics.</li>
+        </ul>
+        <div class="project-link">
+          <a href="https://drive.google.com/file/d/1WQXhN4Ao7bmwt4ZvrA0MovgUYQroIRJ_/view?usp=sharing" target="_blank">Certificate</a> |
+          <a href="https://github.com/HarshitaGupta-610/mern-dashboard" target="_blank">GitHub</a> |
+          <a href="https://mern-dashboard-mauve.vercel.app" target="_blank">Live Demo</a>
+        </div>
+      </div>
+    </div>
+    <!-- IGDTUW Internship -->
+    <div class="horizontal-card">
+      <a href="FullStack Certificate.pdf" target="_blank" class="img-box">
+        <embed src="FullStack Certificate.pdf#page=1" type="application/pdf" width="100%" height="100%" />
+      </a>
+      <div class="content">
+        <div class="card-title">Full Stack Development Intern, IGDTUW</div>
+        <div style="font-size: 14px; color: #aaa; margin-bottom: 8px;">June 2025 – July 2025</div>
+        <ul class="card-desc" style="text-align: left;">
+          <li>Developed <b>NutriMate</b>, a nutrition-tracking app using <b>JavaScript, Python, NumPy, Pandas, Firebase</b> to monitor dietary intake and analyze nutrient deficiencies using data-driven models.</li>
+          <li>Implemented diet-plan recommendations to provide personalized nutrition guidance, addressing gaps where <b>75% of adults fail to meet nutritional needs</b> and <b>1 in 10 lack access to professional advice</b>.</li>
+        </ul>
+        <div class="project-link">
+          <a href="https://drive.google.com/file/d/1uw0Pc1qxgntrbb38gMPV3FbmDo3Na67V/view?usp=sharing" target="_blank">Certificate</a> |
+          <a href="https://github.com/HarshitaGupta-610/NutriMate" target="_blank">GitHub</a> |
+          <a href="https://nutrimate10.netlify.app/" target="_blank">Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+        document.getElementById("theme-icon").textContent = "☀️";
+      }
+    });
+    function toggleTheme() {
+      const body = document.body;
+      const icon = document.getElementById("theme-icon");
+      const isLight = body.classList.toggle("light-theme");
+      icon.textContent = isLight ? "☀️" : "🌙";
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+    }
+  </script>
+</body>
+</html>
